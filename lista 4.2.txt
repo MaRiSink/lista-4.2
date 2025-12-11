@@ -1,0 +1,140 @@
+----Zadanie 1
+SELECT
+imie,
+Count(*) as [ilosc]
+FROM
+gracze
+GROUP BY
+imie
+HAVING
+Count(*) > 10;
+
+
+
+
+
+
+----Zadanie 2
+SELECT
+stan,
+Count(*) as [ilosc > 1100]
+FROM
+oceny
+GROUP BY
+stan
+HAVING
+Count(*) > 1100;
+
+
+
+
+
+
+
+----Zadanie 3
+SELECT
+id_gry,
+MIN(ocena) as [najnizsze]
+FROM
+oceny
+GROUP BY
+id_gry
+HAVING
+MIN(ocena)> 1;
+
+
+
+
+
+
+
+
+----Zadanie 4
+SELECT
+nazwisko,
+Count(*) as [ilosc (parzyste)]
+FROM
+gracze
+GROUP BY
+nazwisko
+HAVING
+Count(*) MOD 2 = 0;
+
+
+
+
+
+
+----Zadanie 5
+SELECT
+id_gracza,
+SUM(ocena) as [suma_ocen]
+FROM
+oceny
+GROUP BY
+id_gracza
+HAVING
+SUM(ocena) LIKE "##"
+ORDER BY SUM(ocena) ASC;
+
+
+
+
+
+
+
+----Zadanie 6
+SELECT
+imie,
+nazwisko,
+Count(*)
+FROM
+gracze
+GROUP BY
+imie, nazwisko
+HAVING 
+Count(*) = 1;
+
+
+
+
+
+
+
+----Zadanie 7
+SELECT
+kategoria,
+Count(*) AS [ilosc]
+FROM
+gry
+WHERE kategoria <> "kooperacyjna"
+GROUP BY
+kategoria
+HAVING 
+Count(*) < 31;
+
+
+
+
+
+
+
+----Zadanie 8
+SELECT
+nazwisko,
+Count(*) AS [ilosc]
+FROM 
+gracze
+
+GROUP BY
+nazwisko
+HAVING 
+Count(*) > 9 
+AND
+nazwisko LIKE "??[a, e, i, y, o, u]*";
+
+
+
+
+
+
