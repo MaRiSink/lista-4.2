@@ -1,0 +1,12 @@
+----Zadanie 7B //4.2 lista
+
+SELECT
+gry.kategoria,
+Count(*) AS [ilosc]
+FROM
+gry
+WHERE gry.kategoria <> "kooperacyjna"
+GROUP BY
+gry.kategoria
+HAVING 
+Count(*) < 31;
